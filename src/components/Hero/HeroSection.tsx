@@ -49,7 +49,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full h-screen bg-[#0a0a0a]">
+    <section style={{ position: "relative", width: "100%", height: "100vh", backgroundColor: "#0a0a0a" }}>
       <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
         <Canvas
           camera={{ position: [0, 0, 5] }}
@@ -59,9 +59,19 @@ export default function HeroSection() {
         </Canvas>
       </div>
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: "24px",
+        pointerEvents: "none",
+      }}>
         <motion.h1
-          className="text-5xl font-bold text-white max-w-2xl leading-tight"
+          style={{ fontSize: "48px", fontWeight: "bold", color: "white", maxWidth: "640px", lineHeight: 1.2 }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -70,7 +80,7 @@ export default function HeroSection() {
         </motion.h1>
 
         <motion.p
-          className="mt-4 text-lg text-zinc-400 max-w-md"
+          style={{ marginTop: "16px", fontSize: "18px", color: "#a1a1aa", maxWidth: "448px" }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
